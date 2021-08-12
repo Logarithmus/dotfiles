@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=/usr/lib/polkit-1/polkitd
+Name=polkitd
+Type=Application

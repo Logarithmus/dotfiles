@@ -1,0 +1,126 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"modules-left": ["sway/workspaces", "sway/window"],
+	"modules-center": ["clock"],
+	"modules-right": ["backlight", "temperature", "cpu", "custom/cpu_freq", "memory", "network", "battery", "custom/keyboard_layout", "custom/alsa"],
+	"sway/mode": {
+		"format": " {}"
+	},
+	"sway/workspaces": {
+		"all-outputs": true,
+		"disable-scroll": true
+	},
+	"sway/window": {
+		"max-length": 50,
+		"tooltip": true
+	},
+	"sway/language": {
+		"format": " {}"
+	},
+	"custom/keyboard_layout": {
+	    "exec": "waybar_sway_keyboard_layout.sh",
+	    "tooltip": false
+	},
+	"clock": {
+		"interval": 60,
+		"format": "🗓️ {:%a %d.%m.%y 🕒 %H:%M}",
+		"tooltip": false
+	},
+	"battery": {
+		"format-icons": ["", "", "", "", ""],
+		"format": "{icon} {capacity}%",
+		"format-charging": "{icon} {capacity}%",
+		"format-discharging": "{icon} {capacity}%",
+		"format-full": "{icon} {capacity}%",
+		"interval": 60,
+		"states": {
+			"warning": 25,
+			"critical": 10
+		}
+	},
+	"custom/pkg": {
+		"format": "📦 {}",
+		"interval": 3600,
+		"exec": "~/.config/waybar/modules/pkg.sh"
+	},
+	"network": {
+		"format-wifi": "📶 {signalStrength}%",
+		"tooltip-format-wifi": "📶 {essid} {signalStrength}%",
+		"format-ethernet": " Wired",
+		"format-disconnected": "⚠️ Disconn.",
+		"interval": 10
+	},
+	"custom/vpn": {
+		"format": " vpn",
+		"interval": 5,
+		"exec" : "echo a",
+		"exec-if" : "systemctl is-active --quiet vpn"
+	},
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": ["🔆"],
+		"on-scroll-up": "xbacklight -perceived +5 && xbacklight -perceived -get > $SWAYSOCK.wob",
+		"on-scroll-down": "xbacklight -perceived -5 && xbacklight -perceived -get > $SWAYSOCK.wob"
+	},
+	"network#speed": {
+		"format-wifi": " {bandwidthUpOctets}",
+		"format-ethernet": " {bandwidthUpOctets}",
+		"interval": 1
+	},
+	"temperature": {
+		"format": "🌡️ {temperatureC}°C",
+		"critical-threshold": 70,
+		"format-critical": "🌡️ <span foreground='#FF0000'>{temperatureC}°C</span>",
+		"interval": 5
+	},
+	"custom/alsa": {
+		"exec": "~/.local/bin/amixer-waybar.sh",
+		"on-click": "amixer -M sset Master toggle; pkill -x -RTMIN+11 waybar",
+		"on-scroll-up": "amixer -M sset Master 5+; pkill -x -RTMIN+11 waybar",
+		"on-scroll-down": "amixer -M sset Master 5-; pkill -x -RTMIN+11 waybar",
+		"signal": 11,
+		"interval": 5,
+		"tooltip": false
+	},
+	"custom/storage": {
+		"format": " {}%",
+		"return-type": "json",
+		"interval": 60,
+		"exec": "~/.config/waybar/modules/storage.sh /"
+	},
+	"custom/zfs-trim": {
+		"format": " <span foreground='#f3f99d'>trimming...</span>",
+		"interval": 5,
+		"exec": "echo a",
+		"exec-if": "systemctl is-active --quiet zfs-trim"
+	},
+	"custom/zfs-scrub": {
+		"format": " <span foreground='#f3f99d'>scrubbing...</span>",
+		"interval": 5,
+		"exec": "echo a",
+		"exec-if": "systemctl is-active --quiet zfs-scrub"
+	},
+	"custom/backup": {
+		"format": " <span foreground='#f3f99d'>backup...</span>",
+		"interval": 5,
+		"exec": "echo a",
+		"exec-if": "systemctl is-active --quiet backup"
+	},
+	"cpu": {
+		"interval": 3,
+		"format": " {usage}%"
+	},
+	"custom/cpu_freq": {
+		"format": "{} MHz",
+		"interval": 3,
+		"exec": "~/.config/waybar/modules/cpu_freq.sh"
+	},
+	"memory": {
+		"interval": 3,
+		"format": " {percentage}%"
+	},
+	"tray": {
+		"icon-size": 18
+	}
+}

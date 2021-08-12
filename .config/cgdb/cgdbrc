@@ -1,0 +1,3 @@
+:set showtgdbcommands
+:set tabstop=4
+:set winsplit=top_big

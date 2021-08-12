@@ -1,0 +1,119 @@
+/* colorscheme */
+@define-color background rgba(34, 34, 34, 0.9); 
+@define-color foreground #ebdbb2;
+@define-color active rgba(68, 68, 68, 0.8);
+@define-color warning rgba(243, 249, 157, 1);
+@define-color alert rgba(255, 92, 87, 1);
+@define-color white #ebdbb2;
+@define-color darkgrey rgba(73, 73, 73, 1);
+@define-color grey rgba(146, 146, 146, 1);
+
+@define-color red rgba(255, 92, 87, 1);
+@define-color yellow rgba(243, 249, 157, 1);
+@define-color blue rgba(10, 108, 245, 1);
+@define-color purple rgba(159, 120, 255, 1);
+@define-color green rgba(90, 247, 142, 1);
+@define-color cyan rgba(154, 237, 254, 1);
+
+* {
+	border-radius: 0;
+	font-family: "Liberation Sans", "Font Awesome 5 Free";
+	font-size: 17px;
+	min-height: 0;
+}
+
+window#waybar {
+	border-bottom: 1px solid @foreground;
+	background: @background;
+	color: @foreground;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+}
+
+#workspaces {
+	padding-right: 30px;
+}
+
+#workspaces button {
+    background: transparent;
+    padding:    0 10px;
+    color:   @white;
+    min-width:  20px;
+    border-top: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.visible {
+    color:      @white;
+}
+#workspaces button.focused {
+    border-top: 1px solid @active;
+    border-bottom: 2px solid @yellow;
+    background: @active;
+}
+#workspaces button.urgent {
+    color:      @alert;
+}
+
+#mode {
+  background-color: @black;
+  border-top: 3px solid @black;
+  border-bottom: 3px solid @red;
+}
+
+#custom-usbguard,
+#custom-decrypted,
+#custom-updates,
+#custom-mail,
+#custom-vpn.off,
+#battery.warning,
+#memory.warning,
+#cpu.warning,
+#custom-dnd.on,
+#custom-tablet.on {
+  border-bottom: 3px solid @yellow;
+}
+
+#custom-systemd,
+#battery.critical,
+#memory.critical,
+#cpu.critical,
+#custom-yubikey,
+#custom-recording {
+  border-bottom: 3px solid @red;
+}
+
+#battery.charging {
+  border-bottom: 3px solid @green;
+}
+
+#mode,
+#pulseaudio,
+#custom-usbguard,
+#custom-yubikey,
+#custom-decrypted,
+#custom-systemd,
+#custom-updates,
+#custom-mail,
+#network,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#battery,
+#clock {
+  margin: 0 5px;
+}
+
+#custom-vpn,
+#custom-dnd,
+#custom-tablet,
+#custom-recording,
+#custom-alsa {
+  padding: 0;
+  margin: 0 3px;
+}
+
+#tray {
+  margin-left: -1000000px;
+}

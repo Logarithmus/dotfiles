@@ -1,0 +1,401 @@
+# vim: filetype=swayconfig
+# File originally by Luke Smith <https://lukesmith.xyz>
+# Modified for swaywm by Logarithmus <https://logarithmus.dev>
+# This config file will use environmental variables such as $BROWSER and $TERMINAL.
+# You can set these variables in ~/.zprofile or ~/.bash_profile if you have it as below:
+# export TERMINAL="foot"
+
+# Basic definitions
+set {
+	$inner_gaps 4
+	$outer_gaps 0 
+	$mod Mod4
+	$shutdown sudo -A shutdown -h now
+	$reboot sudo -A reboot
+	$netrefresh sudo -A sv restart NetworkManager
+	$hibernate sudo -A zzz
+}
+
+# Gaps
+gaps {
+	inner $inner_gaps
+	outer $outer_gaps
+}
+smart_gaps on
+smart_borders on
+
+# Workspaces
+set {
+	$ws1 "1 "
+	$ws2 "2 "
+	$ws3 "3 "
+	$ws4 "4 "
+	$ws5 "5 "
+	$ws6 "6 "
+	$ws7 "7 "
+	$ws8 "8 "
+	$ws9 "9 "
+	$ws10 "10 "
+}
+
+
+# Wallpaper
+output {
+	#Makes XWayland apps blurry
+	#VGA-1 scale 1.2
+	# Set wallpaper
+	* bg `fd -t f . $(xdg-user-dir PICTURES)/Wallpapers | shuf -n 1` fill
+}
+
+set $laptop_screen LVDS-1 
+bindswitch --locked --reload {
+	lid:on output $laptop_screen disable
+	lid:off output $laptop_screen enable
+}
+
+#xwayland disable
+
+exec {
+	# Named pipe for Wayland overlay bar (volume, brightness, etc.)
+	exec mkfifo $SWAYSOCK.wob
+	exec tail -f $SWAYSOCK.wob | wob
+	# Restore screen brightness
+	exec xbacklight -fps 30 -perceived `cat $XDG_CONFIG_HOME/xbacklight/percentage`
+	# Restore volume
+	exec alsactl --file $XDG_CONFIG_HOME/alsa/asound.state restore
+	# Display color temperature
+	exec wlsunset_run.sh
+	# XDG Autostart
+	exec dex -ae Sway
+	# Automount USB
+	exec udiskie
+	# Autotiling script
+	exec autotiling
+	# Idle daemon
+	exec swayidle
+}
+
+exec --always {
+	# GTK+ UI theme
+	exec gsettings set org.gnome.desktop.interface gtk-theme 'OS-X-Leopard-1.1'
+	# GTK+ icon theme
+	exec gsettings set org.gnome.desktop.interface icon-theme 'Obsidian-Mint'
+	# GTK+ cursor theme
+	exec gsettings set org.gnome.desktop.interface cursor-theme 'Mac_OS glass cursor'
+	# GTK+ cursor theme
+	exec gsettings set org.gnome.desktop.interface font-name 'Liberation Sans 12'
+}
+
+# X11 cursor theme
+seat * xcursor_theme "Mac_OS glass cursor"
+
+# # Alternating tile split
+# for_window {
+# 	# Xorg
+# 	[class=".*"] split toggle
+# 	# Wayland
+# 	[app_id=".*"] split toggle
+# }
+# default_orientation vertical
+
+# Dropdown windows
+# General dropdown window traits. The order can matter.
+default_border pixel 3
+client.focused #ebdbb2 #ebdbb2 #ffffff #ebdbb2
+client.unfocused #808080 #808080 #ffffff #808080
+client.focused_inactive #808080 #808080 #ffffff #808080
+for_window [title="About*"] floating enable
+for_window [instance="dropdown_*"] floating enable
+floating_modifier $mod normal
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
+for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
+font "Liberation Sans" 11
+
+bar {
+	swaybar_command waybar
+	position top
+	mode dock
+}
+
+# Touchpad
+input 2:7:SynPS/2_Synaptics_TouchPad {
+	tap enabled
+	middle_emulation enabled
+	natural_scroll enabled
+	accel_profile adaptive
+	pointer_accel 0.35
+}
+# Keyboard
+input type:keyboard {
+	xkb_layout us,ua
+	#xkb_variant colemak,,
+	xkb_options grp:alt_shift_toggle,caps:escape
+	repeat_delay 200
+	repeat_rate 50
+}
+
+# Keybindings (--to-code makes them layout-agnostic)
+bindsym --to-code {
+	# Switch to workspace
+	$mod+1				workspace $ws1
+	$mod+2				workspace $ws2
+	$mod+3				workspace $ws3
+	$mod+4				workspace $ws4
+	$mod+5				workspace $ws5
+	$mod+6				workspace $ws6
+	$mod+7				workspace $ws7
+	$mod+8				workspace $ws8
+	$mod+9				workspace $ws9
+	$mod+0				workspace $ws10
+	$mod+Prior			workspace prev
+	$mod+XF86Back		workspace prev
+	$mod+Next			workspace next
+	$mod+XF86Forward	workspace next
+	$mod+Tab			workspace back_and_forth
+	$mod+Home			workspace $ws1
+	$mod+End			workspace $ws10
+	
+	# Move focused container to a workspace and immediately switch to it
+	$mod+Shift+1			move container to workspace $ws1; workspace $ws1
+	$mod+Shift+2			move container to workspace $ws2; workspace $ws2
+	$mod+Shift+3			move container to workspace $ws3; workspace $ws3
+	$mod+Shift+4			move container to workspace $ws4; workspace $ws4
+	$mod+Shift+5			move container to workspace $ws5; workspace $ws5
+	$mod+Shift+6			move container to workspace $ws6; workspace $ws6
+	$mod+Shift+7			move container to workspace $ws7; workspace $ws7
+	$mod+Shift+8			move container to workspace $ws8; workspace $ws8
+	$mod+Shift+9			move container to workspace $ws9; workspace $ws9
+	$mod+Shift+0			move container to workspace $ws10; workspace $ws10
+	$mod+Shift+Prior		move container to workspace prev; workspace prev
+	$mod+Shift+XF86Back		move container to workspace prev; workspace prev
+	$mod+Shift+Next			move container to workspace next; workspace next
+	$mod+Shift+XF86Forward	move container to workspace next; workspcae next
+	$mod+Shift+Home			move container to workspace $ws1; workspace $ws1
+	$mod+Shift+End			move container to workspace $ws10; workspace $ws10
+	
+	# Switch between containers (tiles)
+	$mod+h		focus left
+	$mod+Left	focus left
+	$mod+j		focus down
+	$mod+Down	focus down
+	$mod+k		focus up
+	$mod+Up		focus up
+	$mod+l		focus right
+	$mod+Right	focus right
+
+	# Move container (tile)
+	$mod+Shift+h		move left 30
+	$mod+Shift+Left		move left 30
+	$mod+Shift+j		move down 30
+	$mod+Shift+Down		move down 30
+	$mod+Shift+k		move up 30
+	$mod+Shift+Up		move up 30
+	$mod+Shift+l		move right 30
+	$mod+Shift+Right	move right 30
+
+	# Move workspaces between screens
+	$mod+Ctrl+h		move workspace to output left
+	$mod+Ctrl+Left	move workspace to output left
+	$mod+Ctrl+j		move workspace to output down
+	$mod+Ctrl+Down	move workspace to output down
+	$mod+Ctrl+k		move workspace to output up
+	$mod+Ctrl+Up	move workspace to output up
+	$mod+Ctrl+l		move workspace to output right
+	$mod+Ctrl+Right	move workspace to output right
+
+	# Close app
+	$mod+q				kill -SIGINT
+	$mod+Shift+q		kill -SIGKILL
+}
+
+bindsym --to-code --locked {
+	# Brightness
+	XF86MonBrightnessUp         exec exec xbacklight-set.sh +10 > $SWAYSOCK.wob &
+	Shift+XF86MonBrightnessUp	exec exec xbacklight-set.sh +5  > $SWAYSOCK.wob &
+	XF86MonBrightnessDown       exec exec xbacklight-set.sh -10 > $SWAYSOCK.wob &
+	Shift+XF86MonBrightnessDown	exec exec xbacklight-set.sh -5  > $SWAYSOCK.wob &
+
+	# Volume
+	XF86AudioMute				exec exec amixer-master.sh toggle > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+equal					exec exec amixer-master.sh 10%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	XF86AudioRaiseVolume		exec exec amixer-master.sh 10%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+Shift+equal			exec exec amixer-master.sh 5%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	Shift+XF86AudioRaiseVolume	exec exec amixer-master.sh 5%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+minus					exec exec amixer-master.sh 10%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	XF86AudioLowerVolume		exec exec amixer-master.sh 10%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+Shift+minus			exec exec amixer-master.sh 5%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	Shift+XF86AudioLowerVolume	exec exec amixer-master.sh 5%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+
+}
+
+bindsym --to-code {
+	# Screenshots & recording
+	Print 				exec exec grimshot --notify copy area
+	Shift+Print 		exec exec grimshot --notify copy output
+	Ctrl+Print 			exec exec grimshot --notify save area
+	Ctrl+Shift+Print 	exec exec grimshot --notify save output
+	$mod+Print			exec exec wf-recorder -f ~/Videos/screen_capture_`date -u +%Y-%m-%d_%H-%M-%S`.mkv
+	$mod+Print+Delete	exec exec pkill -SIGINT wf-recorder
+
+	$mod+Return 		exec exec $TERMINAL
+	$mod+Shift+Return	exec exec samedir
+	$mod+Shift+space 	floating toggle
+	$mod+space			focus mode_toggle
+	$mod+Escape			workspace prev
+	$mod+Shift+Escape	exec exec  prompt "Exit sway?" "sway exit"
+	# $mod+BackSpace
+	$mod+Shift+BackSpace	exec exec  prompt "Reboot computer?" "$reboot"
+	$mod+grave				exec exec  dmenuunicode
+	# $mod+asciitilde
+	
+	# STOP/HIDE EVERYTHING:
+	$mod+Shift+Delete	exec exec  pulsemixer --mute ; exec exec  mpc pause && pkill -RTMIN+10 i3blocks ; exec exec  pauseallmpv; workspace 0; exec exec $TERMINAL -e htop ; exec exec $TERMINAL -e lf
+	
+	# Show selection:
+	$mod+Insert		exec exec  notify-send "📋 Clipboard contents:" "$(xclip -o -selection clipboard)"
+	# $mod+Pause
+	
+	$mod+w			exec exec $BROWSER
+	$mod+Shift+w	exec exec $TERMINAL -e nmtui
+	
+	$mod+e			exec exec $TERMINAL -e neomutt && pkill -RTMIN+12 i3blocks
+	$mod+Shift+e	exec exec  tutorialvids
+	
+	$mod+r 			exec exec $TERMINAL -e lf
+	$mod+Shift+r	exec exec  winresize
+	
+	$mod+t			split toggle
+	$mod+Shift+t	gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
+	
+	$mod+y			exec exec $TERMINAL -e calcurse
+	$mod+Shift+y	exec exec  i3resize left
+	
+	$mod+u			exec exec  ddspawn tmuxdd
+	$mod+Shift+u	exec exec  i3resize down
+	
+	$mod+i 			exec exec $TERMINAL -e htop
+	$mod+Shift+i	exec exec  i3resize up
+	
+	$mod+o			sticky toggle
+	$mod+Shift+o	exec exec  i3resize right
+	
+	$mod+s			gaps inner current plus 5
+	$mod+Shift+s	gaps inner current minus 5
+	
+	$mod+d			exec exec  bemenu-run
+	$mod+Shift+d	gaps inner current set 0; gaps outer current set 0
+	
+	$mod+f			fullscreen toggle
+	$mod+Shift+f	floating enable
+	
+	$mod+g			workspace prev
+	$mod+Shift+g	!(pgrep gammastep && pkill gammastep) && exec exec  gammastep
+	
+	$mod+z			gaps outer current plus 5
+	$mod+Shift+z	gaps outer current minus 5
+	
+	$mod+x			exec exec  xset dpms force off && mpc pause && pauseallmpv && slock &
+	$mod+Shift+x	exec exec  prompt "Shutdown computer?" "$shutdown"
+	
+	$mod+c			exec exec  cabl
+	$mod+Shift+c	exec exec  camtoggle
+	
+	#$mod+v			exec exec  $TERMINAL -e $EDITOR -c "VimwikiIndex"
+	#$mod+Shift+v
+	
+	$mod+b			bar mode toggle
+	$mod+Shift+b	floating toggle; sticky toggle; exec exec  hover left
+	
+	$mod+n			exec exec $TERMINAL -e newsboat && pkill -RTMIN+6 i3blocks
+	$mod+Shift+n	floating toggle; sticky toggle; exec exec  hover right
+	
+	$mod+v			exec exec ytdl_play.sh video
+	$mod+m 			exec exec ytdl_play.sh music
+	$mod+p 			exec exec ytdl_play.sh podcast
+}
+
+
+for_window [class="Pinentry"] sticky enable
+for_window [class="sent"] border pixel 0px
+for_window [title="GIMP Startup"] move workspace $ws5
+for_window [class="Gimp"] move workspace $ws5
+for_window [app_id="org.pwmt.zathura"] move workspace $ws4
+for_window [app_id="libreoffice-(.*)"] move workspace $ws4
+for_window [app_id="Chromium"] move workspace $ws1
+for_window [app_id="mpv"] move workspace $ws8
+for_window [title="mpv"] move workspace $ws8
+for_window [app_id="com.github.rssguard"] move workspace $ws9
+for_window [app_id="evolution"] move workspace $ws9
+for_window [app_id="org.qbittorrent.qBittorrent"] move workspace $ws10
+for_window [app_id="galculator"] floating enable
+for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] move position center
+for_window [title="Default - Wine desktop"] floating enable
+for_window [class="jetbrains-(.*)" title="Go to Line/Column"] floating enable
+for_window [class="jetbrains-(.*)" title="Rename"] floating enable
+for_window [class="jetbrains-(.*)" title="Open Project"] floating enable
+for_window [class="jetbrains-(.*)" title="win0"] floating enable
+for_window [class="Unity"] floating enable
+
+# #---Function Buttons---# #
+bindsym $mod+F1		exec exec groff -mom ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/readme.mom -Tpdf | zathura -
+bindsym $mod+F2		exec exec reboot
+bindsym $mod+F3		exec exec displayselect
+bindsym $mod+F4		exec exec $hibernate
+bindsym $mod+F5		exec exec $netrefresh
+bindsym $mod+F6		exec exec torwrap
+bindsym $mod+F7		exec exec td-toggle
+bindsym $mod+F8		exec exec mw sync
+bindsym $mod+F9		exec exec dmenumount
+bindsym $mod+F10	exec exec dmenuumount
+bindsym $mod+F11	exec exec ducksearch
+bindsym $mod+F12	exec exec $TERMINAL -e nmtui
+
+# mpc
+bindsym $mod+less 			exec exec mpc prev
+bindsym $mod+Shift+less		exec exec mpc seek 0%
+bindsym $mod+greater		exec exec mpc next
+bindsym $mod+Shift+greater	exec exec mpc next
+
+# For advancing forward/backward in an mpd song
+bindsym $mod+bracketleft 		exec exec mpc seek -10
+bindsym $mod+Shift+bracketleft	exec exec mpc seek -120
+bindsym $mod+bracketright		exec exec mpc seek +10
+bindsym $mod+Shift+bracketright	exec exec mpc seek +120
+
+#---Extra XF86 Keys---#
+bindsym XF86Calculator		exec exec  ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym XF86Explorer		exec exec $TERMINAL -e lf
+bindsym XF86WWW				exec exec  $BROWSER
+bindsym XF86ScreenSaver		exec exec exec exec  lockscreen
+bindsym XF86MyComputer		exec exec $TERMINAL -e lf
+bindsym XF86Eject			exec exec  dmenuumount
+bindsym XF86AudioNext		exec exec  mpc next
+bindsym XF86AudioPlay		exec exec  mpc toggle
+bindsym XF86AudioPrev		exec exec  mpc prev
+bindsym XF86AudioStop		exec exec  mpc toggle
+bindsym XF86AudioRewind		exec exec  mpc seek -10
+bindsym XF86AudioForward	exec exec  mpc seek +10
+bindsym XF86HomePage		exec exec $BROWSER https://lukesmith.xyz
+bindsym XF86Reload			restart
+bindsym XF86TouchpadToggle	exec exec  toggletouchpad
+bindsym XF86TouchpadOn		exec exec  synclient TouchpadOff=0
+bindsym XF86TouchpadOff		exec exec  synclient TouchpadOff=1
+bindsym XF86Suspend		exec exec  lockscreen
+bindsym XF86Close		kill -SIGINT
+bindsym XF86WebCam		exec exec  camtoggle
+bindsym XF86Mail		exec exec $TERMINAL -e neomutt && pkill -RTMIN+12 i3blocks
+bindsym XF86Messenger		exec exec $TERMINAL -e weechat
+bindsym XF86Search		exec exec $BROWSER https://duckduckgo.com
+bindsym XF86Shop		exec exec $BROWSER https://ebay.com
+bindsym XF86AudioMedia		exec exec $TERMINAL -e ncmpcpp
+bindsym XF86Display		exec exec displayselect
+bindsym XF86Documents		exec exec $TERMINAL -e lf ~/Documents
+bindsym XF86WLAN		exec exec $netrefresh

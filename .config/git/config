@@ -1,0 +1,21 @@
+[core]
+	quotepath = false
+	pager = less -x1,5
+[user]
+	email = freesoftware@logarithmus.dev
+	name = Artur Sinila
+[diff]
+	renameLimit = 4096
+[alias]
+	hist = log --graph --pretty=format:'%Cred%h%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)%Creset [%an]' --abbrev-commit --date=relative
+	amend = commit --amend --no-edit --date=now
+	cherry = cherry-pick
+	pick = cherry-pick
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=/usr/lib/libexec/polkit-kde-authentication-agent-1
+Name=polkit-kde-authentication-agent-1
+Type=Application
