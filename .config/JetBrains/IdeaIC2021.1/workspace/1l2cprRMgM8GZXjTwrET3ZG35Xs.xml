@@ -1,0 +1,484 @@
+<project version="4">
+  <component name="FavoritesManager">
+    <favorites_list name="quiz-droid" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="169" column="51" selection-start-line="169" selection-start-column="51" selection-end-line="169" selection-end-column="51" />
+              <folding>
+                <element signature="e#2602#2632#1" expanded="true" />
+                <element signature="e#3592#3619#0" expanded="true" />
+                <element signature="e#6578#6605#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle.kts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-74">
+              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dialog_strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="102" selection-start-line="3" selection-start-column="102" selection-end-line="3" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/BluetoothChatService.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/BluetoothChatService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-w720dp/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/BluetoothChatFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/bluetooth_chat.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/DeviceListActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/dialogs/SelectDeviceDialogFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/base/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/WifiListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/WifiListAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/WifiDevice.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/RecyclerItemClickListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/RecyclerItemClickListener.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/R.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/utils/NavigatorUtils.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/utils/Utils.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/RecyclerView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/base/BaseFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/SenderFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/DeviceListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/receiver/ReceiverFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/base-colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/HomeActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/SenderActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/SenderFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/OnSenderUIListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/OnSenderUIListener.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/DeviceListFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/receiver/ReceiverActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/receiver/ReceiverFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/LoaderHelper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/LoaderDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/LoaderDialog.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/DialogHelper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/DialogEventListener.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/CustomDialog.kt" />
+        <option value="$PROJECT_DIR$/app/proguard-rules.pro" />
+        <option value="$PROJECT_DIR$/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/dialogs/FirebaseFailedDialogFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dialog_strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/dialogs/ExitDialogFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/dialogs/WaitForFirebaseDialogFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/QuizDroidApp.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" x="6" y="29" width="1588" height="429" extendedState="6" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="quizdroid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="quizdroid" type="462c0819:PsiDirectoryNode" />
+              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiz-droid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiz-droid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5920792" visible="true" weight="0.22229381" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.40792078" side_tool="true" weight="0.17074743" />
+      <window_info id="Commit" order="3" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Captures" order="5" side_tool="true" />
+      <window_info id="Resources Explorer" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Build" order="1" visible="true" weight="0.24711908" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3290653" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946582" weight="0.21510884" />
+      <window_info anchor="bottom" id="Problems View" order="4" weight="0.22535211" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4695513" weight="0.23175415" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Services" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.04578564" />
+      <window_info anchor="bottom" id="Database Inspector" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="11" sideWeight="0.7361111" weight="0.37131882" />
+      <window_info anchor="bottom" id="Layout Inspector" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Android Profiler" order="13" />
+      <window_info anchor="right" id="Gradle" order="0" weight="0.12564433" />
+      <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" />
+      <window_info anchor="right" id="Layout Validation" order="2" />
+      <window_info anchor="right" x="0" y="0" width="430" height="857" id="Documentation" order="3" side_tool="true" visible="true" weight="0.32959402" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123931624" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Commit" order="3" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Captures" order="5" side_tool="true" />
+      <window_info id="Resources Explorer" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Build" order="1" visible="true" weight="0.09053069" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3298647" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Problems View" order="5" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Services" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Database Inspector" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="11" />
+      <window_info anchor="bottom" id="Layout Inspector" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Android Profiler" order="13" />
+      <window_info anchor="right" id="Gradle" order="0" />
+      <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" />
+      <window_info anchor="right" id="Layout Validation" order="2" />
+    </layout-to-restore>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>questions</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>activity.answersRadioGroup.checkedIndex</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>group.checkedIndex</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>userAnswers</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>correctAnswerIndex</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_bluetooth_chat.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/BluetoothChatFragment.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/bluetooth_chat.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/Constants.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/DeviceListActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/dialogs/SelectDeviceDialogFragment.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/base/BaseActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/WifiListAdapter.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/WifiDevice.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/R.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/RecyclerView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/base-colors.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/RecyclerItemClickListener.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/SenderActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/HomeActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/utils/NavigatorUtils.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/utils/Utils.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/base/BaseFragment.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/SenderFragment.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/DeviceListFragment.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/receiver/ReceiverActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/sender/OnSenderUIListener.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/receiver/ReceiverFragment.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/LoaderHelper.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/LoaderDialog.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/DialogHelper.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/CustomDialog.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/wifi/server/dialogs/DialogEventListener.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dev/logarithmus/p2pdroid/MainActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/MainActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/p2pdroid/BluetoothChatService.java" />
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="49" column="3" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/android-sdk/sources/android-30/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="7182" selection-start-line="7182" selection-end-line="7182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/dialogs/FirebaseFailedDialogFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding>
+            <element signature="e#563#576#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dialog_strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="102" selection-start-line="3" selection-start-column="102" selection-end-line="3" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database/19.6.0/15580418cc88cf32a0fe9f82c1bc927adc60b987/firebase-database-19.6.0-sources.jar!/com/google/firebase/database/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="189" selection-start-line="189" selection-end-line="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database/19.6.0/15580418cc88cf32a0fe9f82c1bc927adc60b987/firebase-database-19.6.0-sources.jar!/com/google/firebase/database/core/ValueEventRegistration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database/19.6.0/15580418cc88cf32a0fe9f82c1bc927adc60b987/firebase-database-19.6.0-sources.jar!/com/google/firebase/database/core/view/DataEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#1735#1736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database/19.6.0/15580418cc88cf32a0fe9f82c1bc927adc60b987/firebase-database-19.6.0-sources.jar!/com/google/firebase/database/core/view/EventRaiser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#1769#2062#0" expanded="true" />
+            <element signature="e#2061#2062#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/android-sdk/sources/android-30/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/android-sdk/sources/android-30/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/dialogs/WaitForFirebaseDialogFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding>
+            <element signature="e#547#559#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/dialogs/FinishDialogFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/QuizDroidApp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="e#35#207#0" expanded="true" />
+            <element signature="e#377#409#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/kotlin/dev/logarithmus/quizdroid/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="169" column="51" selection-start-line="169" selection-start-column="51" selection-end-line="169" selection-end-column="51" />
+          <folding>
+            <element signature="e#2602#2632#1" expanded="true" />
+            <element signature="e#3592#3619#0" expanded="true" />
+            <element signature="e#6578#6605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
