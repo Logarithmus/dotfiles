@@ -11,11 +11,8 @@ export TERM="xterm-256color"
 # gpg-agent
 export GPG_TTY=$TTY
 
-alias open='xdg-open'
-alias gpg='gpg2'
 alias cmake='cmake -GNinja -DCMAKE_LINKER=mold'
 alias tokei='tokei -s code'
-alias ytdl='yt-dlp'
 alias less='less -RWi'
 alias exa='exa --color=always --group-directories-first --icons'
 alias ls='exa --color=always --group-directories-first --icons'
@@ -35,46 +32,69 @@ alias ..5='cd ../../../../../'
 
 # idiot-proof protection
 alias mv='mv -iv'
-alias cp='cp -iv --reflink=auto'
 alias ln='ln -iv'
+
+glow() {
+	[ -z "$1" ] && `/bin/which --skip-functions glow` README.md
+}
+
+# conveniently open files
+open() {
+	xdg-open "$1" &|
+}
+
+# create & cd to a directory in a single command
+mcdir() {
+	mkdir $@ && cd "$1"
+}
+
 
 # auto add -r option to rm when trying to remove directory
 # & idiot proof protection
-rm () {
+rm() {
 	if [ ! -L ${@: -1} ] && [ -d ${@: -1} ]; then
-		/bin/rm -rIv "$@"
+		/bin/rm -riv "$@"
 	else
-		/bin/rm -Iv "$@"
+		/bin/rm -iv "$@"
+	fi
+}
+
+# auto add -r option to cp when trying to cp directory
+# & idiot proof protection
+cp() {
+	if [ ! -L ${@: -1} ] && [ -d ${@: -1} ]; then
+		/bin/cp -riv --reflink=auto "$@"
+	else
+		/bin/cp -iv --reflink=auto "$@"
 	fi
 }
 
 # auto parallel make
-make () {
+make() {
 	/bin/make "$@" -j`nproc`
 }
 
 # Enable switching between images in same directory
-imv () {
-	if [ -f "$1" ]; then
-		/bin/imv `dirname "$1"`
+imv() {
+	if [ -n "$2" ]; then
+		/bin/imv $@ &|
+	elif [ -f "$1" ]; then
+		/bin/imv "`dirname "$1"`" -n "`basename "$1"`" &|
 	elif [ -d "$1" ]; then
-		/bin/imv "$1"
+		/bin/imv "$1" &|
 	elif [ -z "$1" ]; then
-		/bin/imv .
+		/bin/imv . &|
 	fi
 }
 
 # Use curl user agent by default to make sites like wttr.in work correctly
-xh () {
-	`/bin/which --skip-functions xh` "$@" "User-Agent:curl/7.77.0"
+xh() {
+	`/bin/which --skip-functions xh` -b "$@" "User-Agent:curl/7.77.0"
 }
 
 # xbps fuzzy finder
-xs () {
-    xpkg -a |
-        sk -m --preview 'xq {1}' \
-            --preview-window=right:66%:wrap |
-        xargs -ro xi
+xs() {
+	xpkg -a | sk -m --preview 'xq {1}' --preview-window=right:66%:wrap | xargs -ro xi
 }
 
 # fish-like autosuggestions
@@ -182,7 +202,7 @@ bindkey '^e' edit-command-line
 # DigitalOcean CLI autocompletion
 . <(doctl completion zsh)
 # ssh-agent
-ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519 &> /dev/null
 
 # Commands to be executed before the prompt is displayed
 # Save current working dir

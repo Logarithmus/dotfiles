@@ -1,2 +1,0 @@
---external-downloader aria2c
--f "worstaudio[acodec=opus][abr>=96]/worstaudio[acodec=vorbis][abr>=128]/worstaudio[acodec=aac][abr=192]/worstaudio[acodec=mp3][abr>=256]/bestaudio"

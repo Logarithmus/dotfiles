@@ -13,8 +13,8 @@ export LANG="en_GB.UTF-8"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Adds `~/.local/bin` to $PATH
+export PATH="$HOME/.local/bin:$HOME/.local/bin/scripts:$PATH"
 export PATH="/usr/lib/ccache/bin:$PATH"
-export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 export PATH="$PATH:$HOME/android-sdk/tools/bin:/opt/texlive/2020/bin/x86_64-linuxmusl/:$GOPATH/bin"
 # Chromium flags
 export CHROME_FLAGS="--password-store=detect --enable-oop-rasterization \
@@ -48,8 +48,9 @@ export KODI_DATA="${XDG_DATA_HOME}/kodi"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME}/password-store"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export ANDROID_SDK_HOME="${XDG_CONFIG_HOME}/android"
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CARGO_TARGET_DIR="${XDG_CACHE_HOME}/cargo/target"
 export PATH="${PATH}:${CARGO_HOME}/bin"
 export GOPATH="${XDG_DATA_HOME}/go"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible/ansible.cfg"

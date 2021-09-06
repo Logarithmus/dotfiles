@@ -217,108 +217,106 @@ bindsym --to-code {
 
 bindsym --to-code --locked {
 	# Brightness
-	XF86MonBrightnessUp         exec exec xbacklight-set.sh +10 > $SWAYSOCK.wob &
-	Shift+XF86MonBrightnessUp	exec exec xbacklight-set.sh +5  > $SWAYSOCK.wob &
-	XF86MonBrightnessDown       exec exec xbacklight-set.sh -10 > $SWAYSOCK.wob &
-	Shift+XF86MonBrightnessDown	exec exec xbacklight-set.sh -5  > $SWAYSOCK.wob &
+	XF86MonBrightnessUp         exec xbacklight-set.sh +10 > $SWAYSOCK.wob &
+	Shift+XF86MonBrightnessUp	exec xbacklight-set.sh +5  > $SWAYSOCK.wob &
+	XF86MonBrightnessDown       exec xbacklight-set.sh -10 > $SWAYSOCK.wob &
+	Shift+XF86MonBrightnessDown	exec xbacklight-set.sh -5  > $SWAYSOCK.wob &
 
 	# Volume
-	XF86AudioMute				exec exec amixer-master.sh toggle > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	$mod+equal					exec exec amixer-master.sh 10%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	XF86AudioRaiseVolume		exec exec amixer-master.sh 10%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	$mod+Shift+equal			exec exec amixer-master.sh 5%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	Shift+XF86AudioRaiseVolume	exec exec amixer-master.sh 5%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	$mod+minus					exec exec amixer-master.sh 10%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	XF86AudioLowerVolume		exec exec amixer-master.sh 10%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	$mod+Shift+minus			exec exec amixer-master.sh 5%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
-	Shift+XF86AudioLowerVolume	exec exec amixer-master.sh 5%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	XF86AudioMute				exec amixer-master.sh toggle > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+equal					exec amixer-master.sh 10%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	XF86AudioRaiseVolume		exec amixer-master.sh 10%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+Shift+equal			exec amixer-master.sh 5%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	Shift+XF86AudioRaiseVolume	exec amixer-master.sh 5%+	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+minus					exec amixer-master.sh 10%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	XF86AudioLowerVolume		exec amixer-master.sh 10%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	$mod+Shift+minus			exec amixer-master.sh 5%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
+	Shift+XF86AudioLowerVolume	exec amixer-master.sh 5%-	 > $SWAYSOCK.wob & ; pkill -x -RTMIN+11 waybar
 
 }
 
 bindsym --to-code {
-	# Screenshots & recording
-	Print 				exec exec grimshot --notify copy area
-	Shift+Print 		exec exec grimshot --notify copy output
-	Ctrl+Print 			exec exec grimshot --notify save area
-	Ctrl+Shift+Print 	exec exec grimshot --notify save output
-	$mod+Print			exec exec wf-recorder -f ~/Videos/screen_capture_`date -u +%Y-%m-%d_%H-%M-%S`.mkv
-	$mod+Print+Delete	exec exec pkill -SIGINT wf-recorder
+	# Screenshots, screencast & screenshare
+	Print           exec screenshot.sh copy area
+	Ctrl+Print      exec screenshot.sh copy output
+	$mod+Print      exec screencast.sh
+	$mod+Ctrl+Print exec screenshare.sh
 
-	$mod+Return 		exec exec $TERMINAL
-	$mod+Shift+Return	exec exec samedir
+	$mod+Return 		exec $TERMINAL
+	$mod+Shift+Return	exec samedir
 	$mod+Shift+space 	floating toggle
 	$mod+space			focus mode_toggle
 	$mod+Escape			workspace prev
-	$mod+Shift+Escape	exec exec  prompt "Exit sway?" "sway exit"
+	$mod+Shift+Escape	exec  prompt "Exit sway?" "sway exit"
 	# $mod+BackSpace
-	$mod+Shift+BackSpace	exec exec  prompt "Reboot computer?" "$reboot"
-	$mod+grave				exec exec  dmenuunicode
+	$mod+Shift+BackSpace	exec  prompt "Reboot computer?" "$reboot"
+	$mod+grave				exec  dmenuunicode
 	# $mod+asciitilde
 	
 	# STOP/HIDE EVERYTHING:
-	$mod+Shift+Delete	exec exec  pulsemixer --mute ; exec exec  mpc pause && pkill -RTMIN+10 i3blocks ; exec exec  pauseallmpv; workspace 0; exec exec $TERMINAL -e htop ; exec exec $TERMINAL -e lf
+	$mod+Shift+Delete	exec  pulsemixer --mute ; exec  mpc pause && pkill -RTMIN+10 i3blocks ; exec  pauseallmpv; workspace 0; exec $TERMINAL -e htop ; exec $TERMINAL -e lf
 	
 	# Show selection:
-	$mod+Insert		exec exec  notify-send "📋 Clipboard contents:" "$(xclip -o -selection clipboard)"
+	$mod+Insert		exec  notify-send "📋 Clipboard contents:" "$(xclip -o -selection clipboard)"
 	# $mod+Pause
 	
-	$mod+w			exec exec $BROWSER
-	$mod+Shift+w	exec exec $TERMINAL -e nmtui
+	$mod+w			exec $BROWSER
+	$mod+Shift+w	exec $TERMINAL -e nmtui
 	
-	$mod+e			exec exec $TERMINAL -e neomutt && pkill -RTMIN+12 i3blocks
-	$mod+Shift+e	exec exec  tutorialvids
+	$mod+e			exec $TERMINAL -e neomutt && pkill -RTMIN+12 i3blocks
+	$mod+Shift+e	exec  tutorialvids
 	
-	$mod+r 			exec exec $TERMINAL -e lf
-	$mod+Shift+r	exec exec  winresize
+	$mod+r 			exec $TERMINAL -e lf
+	$mod+Shift+r	exec  winresize
 	
 	$mod+t			split toggle
 	$mod+Shift+t	gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
 	
-	$mod+y			exec exec $TERMINAL -e calcurse
-	$mod+Shift+y	exec exec  i3resize left
+	$mod+y			exec $TERMINAL -e calcurse
+	$mod+Shift+y	exec  i3resize left
 	
-	$mod+u			exec exec  ddspawn tmuxdd
-	$mod+Shift+u	exec exec  i3resize down
+	$mod+u			exec  ddspawn tmuxdd
+	$mod+Shift+u	exec  i3resize down
 	
-	$mod+i 			exec exec $TERMINAL -e htop
-	$mod+Shift+i	exec exec  i3resize up
+	$mod+i 			exec $TERMINAL -e htop
+	$mod+Shift+i	exec  i3resize up
 	
 	$mod+o			sticky toggle
-	$mod+Shift+o	exec exec  i3resize right
+	$mod+Shift+o	exec  i3resize right
 	
 	$mod+s			gaps inner current plus 5
 	$mod+Shift+s	gaps inner current minus 5
 	
-	$mod+d			exec exec  bemenu-run
+	$mod+d			exec  bemenu-run
 	$mod+Shift+d	gaps inner current set 0; gaps outer current set 0
 	
 	$mod+f			fullscreen toggle
 	$mod+Shift+f	floating enable
 	
 	$mod+g			workspace prev
-	$mod+Shift+g	!(pgrep gammastep && pkill gammastep) && exec exec  gammastep
+	$mod+Shift+g	!(pgrep gammastep && pkill gammastep) && exec  gammastep
 	
 	$mod+z			gaps outer current plus 5
 	$mod+Shift+z	gaps outer current minus 5
 	
-	$mod+x			exec exec  xset dpms force off && mpc pause && pauseallmpv && slock &
-	$mod+Shift+x	exec exec  prompt "Shutdown computer?" "$shutdown"
+	$mod+x			exec  xset dpms force off && mpc pause && pauseallmpv && slock &
+	$mod+Shift+x	exec  prompt "Shutdown computer?" "$shutdown"
 	
-	$mod+c			exec exec  cabl
-	$mod+Shift+c	exec exec  camtoggle
+	$mod+c			exec  cabl
+	$mod+Shift+c	exec  camtoggle
 	
-	#$mod+v			exec exec  $TERMINAL -e $EDITOR -c "VimwikiIndex"
+	#$mod+v			exec  $TERMINAL -e $EDITOR -c "VimwikiIndex"
 	#$mod+Shift+v
 	
 	$mod+b			bar mode toggle
-	$mod+Shift+b	floating toggle; sticky toggle; exec exec  hover left
+	$mod+Shift+b	floating toggle; sticky toggle; exec  hover left
 	
-	$mod+n			exec exec $TERMINAL -e newsboat && pkill -RTMIN+6 i3blocks
-	$mod+Shift+n	floating toggle; sticky toggle; exec exec  hover right
+	$mod+n			exec $TERMINAL -e newsboat && pkill -RTMIN+6 i3blocks
+	$mod+Shift+n	floating toggle; sticky toggle; exec  hover right
 	
-	$mod+v			exec exec ytdl_play.sh video
-	$mod+m 			exec exec ytdl_play.sh music
-	$mod+p 			exec exec ytdl_play.sh podcast
+	$mod+v			exec ytdl_play.sh video   "`wl-paste`"
+	$mod+m 			exec ytdl_play.sh music   "`wl-paste`"
+	$mod+p 			exec ytdl_play.sh podcast "`wl-paste`"
 }
 
 
@@ -345,57 +343,57 @@ for_window [class="jetbrains-(.*)" title="win0"] floating enable
 for_window [class="Unity"] floating enable
 
 # #---Function Buttons---# #
-bindsym $mod+F1		exec exec groff -mom ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/readme.mom -Tpdf | zathura -
-bindsym $mod+F2		exec exec reboot
-bindsym $mod+F3		exec exec displayselect
-bindsym $mod+F4		exec exec $hibernate
-bindsym $mod+F5		exec exec $netrefresh
-bindsym $mod+F6		exec exec torwrap
-bindsym $mod+F7		exec exec td-toggle
-bindsym $mod+F8		exec exec mw sync
-bindsym $mod+F9		exec exec dmenumount
-bindsym $mod+F10	exec exec dmenuumount
-bindsym $mod+F11	exec exec ducksearch
-bindsym $mod+F12	exec exec $TERMINAL -e nmtui
+bindsym $mod+F1		exec groff -mom ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/readme.mom -Tpdf | zathura -
+bindsym $mod+F2		exec reboot
+bindsym $mod+F3		exec displayselect
+bindsym $mod+F4		exec $hibernate
+bindsym $mod+F5		exec $netrefresh
+bindsym $mod+F6		exec torwrap
+bindsym $mod+F7		exec td-toggle
+bindsym $mod+F8		exec mw sync
+bindsym $mod+F9		exec dmenumount
+bindsym $mod+F10	exec dmenuumount
+bindsym $mod+F11	exec ducksearch
+bindsym $mod+F12	exec $TERMINAL -e nmtui
 
 # mpc
-bindsym $mod+less 			exec exec mpc prev
-bindsym $mod+Shift+less		exec exec mpc seek 0%
-bindsym $mod+greater		exec exec mpc next
-bindsym $mod+Shift+greater	exec exec mpc next
+bindsym $mod+less 			exec mpc prev
+bindsym $mod+Shift+less		exec mpc seek 0%
+bindsym $mod+greater		exec mpc next
+bindsym $mod+Shift+greater	exec mpc next
 
 # For advancing forward/backward in an mpd song
-bindsym $mod+bracketleft 		exec exec mpc seek -10
-bindsym $mod+Shift+bracketleft	exec exec mpc seek -120
-bindsym $mod+bracketright		exec exec mpc seek +10
-bindsym $mod+Shift+bracketright	exec exec mpc seek +120
+bindsym $mod+bracketleft 		exec mpc seek -10
+bindsym $mod+Shift+bracketleft	exec mpc seek -120
+bindsym $mod+bracketright		exec mpc seek +10
+bindsym $mod+Shift+bracketright	exec mpc seek +120
 
 #---Extra XF86 Keys---#
-bindsym XF86Calculator		exec exec  ddspawn dropdowncalc -f mono:pixelsize=24
-bindsym XF86Explorer		exec exec $TERMINAL -e lf
-bindsym XF86WWW				exec exec  $BROWSER
-bindsym XF86ScreenSaver		exec exec exec exec  lockscreen
-bindsym XF86MyComputer		exec exec $TERMINAL -e lf
-bindsym XF86Eject			exec exec  dmenuumount
-bindsym XF86AudioNext		exec exec  mpc next
-bindsym XF86AudioPlay		exec exec  mpc toggle
-bindsym XF86AudioPrev		exec exec  mpc prev
-bindsym XF86AudioStop		exec exec  mpc toggle
-bindsym XF86AudioRewind		exec exec  mpc seek -10
-bindsym XF86AudioForward	exec exec  mpc seek +10
-bindsym XF86HomePage		exec exec $BROWSER https://lukesmith.xyz
+bindsym XF86Calculator		exec ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym XF86Explorer		exec $TERMINAL -e lf
+bindsym XF86WWW				exec $BROWSER
+bindsym XF86ScreenSaver		exec lockscreen
+bindsym XF86MyComputer		exec $TERMINAL -e lf
+bindsym XF86Eject			exec dmenuumount
+bindsym XF86AudioNext		exec mpc next
+bindsym XF86AudioPlay		exec mpc toggle
+bindsym XF86AudioPrev		exec mpc prev
+bindsym XF86AudioStop		exec mpc toggle
+bindsym XF86AudioRewind		exec mpc seek -10
+bindsym XF86AudioForward	exec mpc seek +10
+bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
 bindsym XF86Reload			restart
-bindsym XF86TouchpadToggle	exec exec  toggletouchpad
-bindsym XF86TouchpadOn		exec exec  synclient TouchpadOff=0
-bindsym XF86TouchpadOff		exec exec  synclient TouchpadOff=1
-bindsym XF86Suspend		exec exec  lockscreen
+bindsym XF86TouchpadToggle	exec  toggletouchpad
+bindsym XF86TouchpadOn		exec  synclient TouchpadOff=0
+bindsym XF86TouchpadOff		exec  synclient TouchpadOff=1
+bindsym XF86Suspend		exec  lockscreen
 bindsym XF86Close		kill -SIGINT
-bindsym XF86WebCam		exec exec  camtoggle
-bindsym XF86Mail		exec exec $TERMINAL -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym XF86Messenger		exec exec $TERMINAL -e weechat
-bindsym XF86Search		exec exec $BROWSER https://duckduckgo.com
-bindsym XF86Shop		exec exec $BROWSER https://ebay.com
-bindsym XF86AudioMedia		exec exec $TERMINAL -e ncmpcpp
-bindsym XF86Display		exec exec displayselect
-bindsym XF86Documents		exec exec $TERMINAL -e lf ~/Documents
-bindsym XF86WLAN		exec exec $netrefresh
+bindsym XF86WebCam		exec  camtoggle
+bindsym XF86Mail		exec $TERMINAL -e neomutt && pkill -RTMIN+12 i3blocks
+bindsym XF86Messenger		exec $TERMINAL -e weechat
+bindsym XF86Search		exec $BROWSER https://duckduckgo.com
+bindsym XF86Shop		exec $BROWSER https://ebay.com
+bindsym XF86AudioMedia		exec $TERMINAL -e ncmpcpp
+bindsym XF86Display		exec displayselect
+bindsym XF86Documents		exec $TERMINAL -e lf ~/Documents
+bindsym XF86WLAN		exec $netrefresh

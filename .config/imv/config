@@ -1,6 +1,9 @@
 # Default config for imv
 
 [options]
+title_text = $(basename "$imv_current_file")
+overlay_text = $(basename "$imv_current_file")
+overlay_font = monospace:12
 
 # Suppress built-in key bindings, and specify them explicitly in this
 # config file.
@@ -48,6 +51,7 @@ q = close
 f = fullscreen
 d = overlay
 p = exec echo $imv_current_file
+x = exec trash-put "$imv_current_file"
 c = center
 s = scaling next
 <Shift+S> = upscaling next
