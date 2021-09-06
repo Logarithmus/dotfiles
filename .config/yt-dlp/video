@@ -1,0 +1,4 @@
+--external-downloader aria2c
+--sub-format=en
+--write-sub
+-f "bestvideo[height<=1080][fps<=30][vcodec^=avc]+bestaudio[acodec=opus]/best[height<=1080][vcodec^=avc]/bestvideo[height<=1080]+bestaudio/best[height<=1080]/best"

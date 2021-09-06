@@ -1,0 +1,20 @@
+[dist]
+scheduler_url = "https://172.16.1.1:8888"
+# Size of the local toolchain cache, in bytes (5GB here, 10GB if unspecified).
+toolchain_cache_size = 4294967296
+
+[[dist.toolchains]]
+type = "path_override"
+compiler_executable = "/usr/bin/clang"
+archive = "home/artur/.local/share/sccache/toolchains/clang.tar.gz"
+archive_compiler_executable = "usr/bin/clang"
+
+[[dist.toolchains]]
+type = "path_override"
+compiler_executable = "/home/artur/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-musl/bin/rustc"
+archive = "home/artur/.local/share/sccache/toolchains/rustc.tar.gz"
+archive_compiler_executable = "home/artur/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-musl/bin/rustc"
+
+[dist.auth]
+type = "token"
+token = "A(|IuDJ|StmZqFW4VsbQs@)E)7yb,>CGH~7K,M.7XCM=^n]?3_`%@?P$~eG1wFx&"

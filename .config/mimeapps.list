@@ -1,0 +1,47 @@
+[Added Associations]
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;org.inkscape.Inkscape.desktop;
+application/x-yaml=nvim.desktop;
+application/zip=ark.desktop;
+image/avif=imv.desktop
+image/gif=imv.desktop
+image/jpeg=imv.desktop
+image/png=imv.desktop
+image/svg+xml=org.inkscape.Inkscape.desktop;gimp.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop;wine-extension-xml.desktop;chromium.desktop;nvim.desktop;wine-extension-txt.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/html=userapp-Firefox-2DKZM0.desktop;chromium.desktop;nvim.desktop;okularApplication_txt.desktop;
+text/plain=nvim.desktop;okularApplication_txt.desktop;
+text/x-csrc=wine-extension-txt.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop;nvim.desktop;
+x-scheme-handler/http=userapp-Firefox-2DKZM0.desktop;
+x-scheme-handler/https=userapp-Firefox-2DKZM0.desktop;
+x-scheme-handler/mailto=userapp-Evolution-3PQCR0.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-8GJKW0.desktop;userapp-Telegram Desktop-9FUIY0.desktop;
+
+[Default Applications]
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+application/x-extension-htm=userapp-Firefox-2DKZM0.desktop
+application/x-extension-html=userapp-Firefox-2DKZM0.desktop
+application/x-extension-shtml=userapp-Firefox-2DKZM0.desktop
+application/x-extension-xht=userapp-Firefox-2DKZM0.desktop
+application/x-extension-xhtml=userapp-Firefox-2DKZM0.desktop
+application/x-yaml=nvim.desktop;
+application/xhtml+xml=userapp-Firefox-2DKZM0.desktop
+application/zip=ark.desktop;
+image/avif=imv.desktop
+image/gif=imv.desktop
+image/jpeg=imv.desktop
+image/png=imv.desktop
+image/svg+xml=imv.desktop
+inode/directory=org.kde.dolphin.desktop;
+text/html=chromium.desktop
+text/plain=nvim.desktop;
+text/x-csrc=wine-extension-txt.desktop;
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/chrome=userapp-Firefox-2DKZM0.desktop
+x-scheme-handler/ftp=userapp-Firefox-2DKZM0.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/mailto=userapp-Evolution-3PQCR0.desktop;
+x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-9FUIY0.desktop
+
+[Removed Associations]

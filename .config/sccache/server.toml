@@ -1,0 +1,14 @@
+cache_dir = "/tmp/sccache/toolchains"
+public_addr = "172.16.1.2:10500"
+scheduler_url = "https://172.16.1.1:8888"
+
+[builder]
+type = "overlay"
+# The directory under which a sandboxed filesystem will be created for builds.
+build_dir = "/tmp/sccache"
+# The path to the bubblewrap version 0.3.0+ `bwrap` binary.
+bwrap_path = "/usr/bin/bwrap"
+
+[scheduler_auth]
+type = "jwt_token"
+token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXJ2ZXJfaWQiOiIxNzIuMTYuMS4yOjEwNTAwIn0.K7aE_fln7uT3rCBcvyy4h_--ePXNJZxjVeeDPo-wEe4"
