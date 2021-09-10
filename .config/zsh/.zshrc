@@ -35,7 +35,11 @@ alias mv='mv -iv'
 alias ln='ln -iv'
 
 glow() {
-	[ -z "$1" ] && `/bin/which --skip-functions glow` README.md
+	if [ -z "$1" ]; then
+		`/bin/which --skip-functions glow` README.md
+	else
+		`/bin/which --skip-functions glow` $@
+	fi
 }
 
 # conveniently open files
@@ -199,8 +203,6 @@ bindkey '^e' edit-command-line
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # fish-like history search
 # . /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# DigitalOcean CLI autocompletion
-. <(doctl completion zsh)
 # ssh-agent
 ssh-add ~/.ssh/id_ed25519 &> /dev/null
 

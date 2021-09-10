@@ -91,7 +91,7 @@ call plug#begin()
 	let g:gruvbox_plugin_hi_groups = 1
 	Plug 'Logarithmus/vim-obsidian'
 
-	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+	Plug 'norcalli/nvim-colorizer.lua'
 	
 	Plug 'Logarithmus/LanguageClient-neovim', {
 	\	'branch': 'enhanced-hints-next',
@@ -102,8 +102,17 @@ call plug#begin()
 	\		'name': 'rust-analyzer',
 	\		'command': ['rust-analyzer'],
 	\		'initializationOptions': {
+	\			'server': {
+	\				'extraEnv': {
+	\					'RUSTFLAGS': [
+	\						'-C', 'linker=clang',
+	\						'-C', 'link-arg=--ld-path=mold'
+	\					]
+	\				}
+	\			},
 	\			'checkOnSave': {
-	\				'extraArgs': ['--target-dir', $HOME . '/.cache/rust-analyzer']
+	\				'enable': v:false,
+	\				'extraArgs': ['--target-dir', '/home/artur/.cache/cargo/target']
 	\			},
 	\			'rustfmt': {
 	\				'overrideCommand': ['rustfmt']
@@ -232,6 +241,7 @@ call plug#begin()
 
 call plug#end()
 
+lua require'colorizer'.setup()
 " lua require('neoscroll').setup()
 
 " call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({

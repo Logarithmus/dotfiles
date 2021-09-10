@@ -33,7 +33,12 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 . $XDG_CONFIG_HOME/user-dirs.dirs
 
+# Fix pretty print scripts for Rust GDB
+export PYTHONPATH="${PYTHONPATH}:${XDG_DATA_HOME}/rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/etc"
+
 # $HOME clean-up:
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export SQLITE_HISTORY="${XDG_CACHE_HOME}/sqlite_history"
 export NOTMUCH_CONFIG="${XDG_CONFIG_HOME}/notmuch-config"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc-2.0"
