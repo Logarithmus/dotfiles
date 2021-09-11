@@ -24,6 +24,8 @@ call plug#begin()
 	" Autosave
 	" Plug 'chrisbra/vim-autosave'
 	" let g:autosave_timer = 30 * 1000 " save each 30 seconds
+
+	Plug 'editorconfig/editorconfig-vim'
 	
 	" Find & replace results preview
 	Plug 'osyo-manga/vim-over'
