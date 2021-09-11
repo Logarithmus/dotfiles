@@ -4,6 +4,7 @@
 [user]
 	email = freesoftware@logarithmus.dev
 	name = Artur Sinila
+	signingkey = 5DA22348F9279600BC3E9214770E69D690735C61
 [diff]
 	renameLimit = 4096
 [alias]
