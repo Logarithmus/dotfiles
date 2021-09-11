@@ -11,6 +11,11 @@ export TERM="xterm-256color"
 # gpg-agent
 export GPG_TTY=$TTY
 
+# https://users.rust-lang.org/t/solved-how-to-step-into-std-source-code-when-debugging-in-vs-code/25319
+export RUST_GDB="cgdb -ex 'set substitute-path \
+/rustc/a178d0322ce20e33eac124758e837cbd80a6f633 \
+$RUSTUP_HOME/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust'"
+
 alias cmake='cmake -GNinja -DCMAKE_LINKER=mold'
 alias tokei='tokei -s code'
 alias less='less -RWi'

@@ -33,8 +33,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 . $XDG_CONFIG_HOME/user-dirs.dirs
 
-# Fix pretty print scripts for Rust GDB
-export PYTHONPATH="${PYTHONPATH}:${XDG_DATA_HOME}/rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/etc"
 
 # $HOME clean-up:
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
