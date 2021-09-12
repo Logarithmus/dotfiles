@@ -70,7 +70,7 @@ exec {
 	# Automount USB
 	exec udiskie
 	# Autotiling script
-	exec autotiling
+	exec autotiling -w 1 2 3 4 5 6 7 8 10
 	# Idle daemon
 	exec swayidle
 }
@@ -96,7 +96,7 @@ seat * xcursor_theme "Mac_OS glass cursor"
 # 	# Wayland
 # 	[app_id=".*"] split toggle
 # }
-# default_orientation vertical
+default_orientation vertical
 
 # Dropdown windows
 # General dropdown window traits. The order can matter.
@@ -199,6 +199,7 @@ bindsym --to-code {
 	$mod+Shift+Up		move up 30
 	$mod+Shift+l		move right 30
 	$mod+Shift+Right	move right 30
+	$mod+Shift+u		layout toggle
 
 	# Move workspaces between screens
 	$mod+Ctrl+h		move workspace to output left
@@ -274,9 +275,6 @@ bindsym --to-code {
 	
 	$mod+y			exec $TERMINAL -e calcurse
 	$mod+Shift+y	exec  i3resize left
-	
-	$mod+u			exec  ddspawn tmuxdd
-	$mod+Shift+u	exec  i3resize down
 	
 	$mod+i 			exec $TERMINAL -e htop
 	$mod+Shift+i	exec  i3resize up
