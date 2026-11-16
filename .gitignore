@@ -1,0 +1,4 @@
+# Settings for one machine only (work, secrets)
+*.local
+.config/zsh/cwd
+.config/zsh/.zcompdump*
